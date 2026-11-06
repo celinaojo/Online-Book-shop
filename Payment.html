@@ -1,0 +1,120 @@
+<!DOCTYPE html> <!-- This declares that the documents is an HTML -->
+<html lang="en" dir="ltr"> <!-- This specifies that the page's language is English and you read from left to right-->
+
+    <head>
+        <meta charset="UTF-8"> <!-- This specifies the character encoding for the HTML document -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- This sets the viewport to make the website responsive on different devices -->
+        <title>Payment</title> <!-- This sets the title of the webpage that appears in the browser tab -->
+        <link rel="stylesheet" href="CSS/Book_stylesheet.css"> <!-- This links the external CSS file -->
+        <script src="JavaScript/Payment.js"></script> <!-- This links the external JavaScript file -->
+        <script src="JavaScript/Navigation.js"></script> <!-- This links the JavaScript file to the page -->
+        <script src="JavaScript/Font_size.js"></script>
+        <script src="JavaScript/Theme.js"></script>
+    </head>
+
+    <body>
+
+        <div class="Header_container"> <!-- This creates a container for the contact page -->
+        <img id="Payment_logo" class="logo" src="Images/Book_Logo/Logo.jpg" > <!-- This adds the logo next to the home page header-->
+        <h1 id="Payment_header" class="Main_header">Paper Book Lovers</h1> <!--This is the main header and title of the page of the page-->
+    </div>
+
+
+    <!--This is the navigation bar dedicated to the home page-->
+    <div id="Payment_nav" class="Navigation"> <!--This creates an unique id for the navigation in the home and puts the navigaton bar into a class -->
+
+        <nav> <!--This creates navigation links-->
+
+        <button class="Navigation_toggle" id="Payment_toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+
+        </button>
+
+            <ul class="Navigation_links"><!--This creates an unordered list for the navigation items -->
+                <!--Everything is linked to their pages-->
+                 <li id="H_nav1"><a href="Home.html">Home</a></li>
+                 <li id="H_nav2"><a href="About_Us.html">About Us</a></li>
+                 <li id="H_nav3"><a href="Contact_Us.html">Contact Us</a></li>
+            </ul>
+
+        <!--This creates a class for the font size buttons-->
+        <div class="font-controls">
+
+        <button id="Payment_Increase_button">A+</button>
+
+        <button id="Payment_Reset_button">A</button>
+
+        <button id="Payment_Decrease_button">A-</button>
+
+</div>
+
+<!--This created a theme selector-->
+<div class="colour_theme_container">
+    <label for="P_Colour_selector">Theme:</label>
+    <select id="P_Colour_selector" class="Colour_selector">
+        <option value="default">Default</option>
+        <option value="dark">Dark</option>
+        <option value="light">Light</option>
+    </select>
+    </div>
+
+    <!--This created an icon for the basket-->
+    <div class="basket_container">
+
+        <button class="baskets" id="Payment_basket">
+        <span class="basket_icon" >
+        <img class="basket_icons" id="Payment_basket_icon" src="Images/Icon/Basket.jpg">
+        </span>
+        <span class="basket_number" id="Payment_basket_number">0</span>
+        </button>
+    </div>
+        </nav>
+    </div>
+
+       
+
+        <div class="Payment_form">
+             <h2 id="Payment_title">Payment Options</h2><br> <!-- This is the header of the page -->
+               <div class="Payment_headings"> <!-- This is the container for the payment options -->
+              <p id="Card">Debit / Credit Card</p> <!-- This is the paragraph for the card number -->
+              <img src="Images/Card_Images/Card.webp" id="Card_image">
+              </div>
+            <div class="form">
+            <form>
+                <label for="Card_number">Card number:</label>
+                <input type="text" id="Card_number" name="Card_number">
+                <br>
+                <label for="Month">Expiry date:</label>
+                <select name="Expiry_month" id="Month">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select>
+                <select name="Expiry_year" id="Year">
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                </select>
+                <br>
+                <label for="CVV">CVV:</label>
+                <input type="text" id="CVV" name="CVV">
+                <br>
+            </form>
+            <p id="CVV_message"> (This is the 3-4 digit number at the back of your card)</p>
+            <input type="submit" value="Continue" id="submit_button"> <!-- This is the submit button for the form -->
+            </div>
+        </div>
+
+    </body>
+</html>

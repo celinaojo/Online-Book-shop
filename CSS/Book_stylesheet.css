@@ -1,0 +1,403 @@
+@charset "UTF-8"; /* This makes the stylesheet use UTF-8 character encoding */
+
+
+/*This helps create a colour scheme for each colour theme*/
+:root{
+    --background-colour: rgb(105,103,103);
+    --container-background: white;
+    --text-color: #434242;
+    --header-background:white;
+    --nav-background:white;
+    --bar-colour:grey;
+}
+
+[data-theme="dark"]{
+    --background-colour: #1a1a1a;
+    --container-background: #2d2d2d;
+    --text-color: #e0e0e0;
+    --header-background:#2d2d2d;
+    --nav-background:#2d2d2d;
+    --bar-colour:white;
+}
+
+[data-theme="light"]{
+    --background-colour: #f5f5f5;
+    --container-background: white;
+    --text-color: #333333;
+    --header-background:white;
+    --nav-background:white;
+    --bar-colour:black;
+}
+
+body{
+    background-color: var(--background-colour); /* This sets the background color based on the theme */
+}
+
+/*This makes it so that the header text is next to the logo and at the center of the container*/
+.Header_container{
+    display: flex; /* This makes the header container a flex container, allowing for flexible layout of its children */
+    justify-content: center; /*This makes the content at the centre of the container */
+    align-items: center; /* This vertically aligns the content in the center of the container */
+    gap:10px; /* This adds a small gap between the logo and the header text */
+    padding: 15px; /* This adds some padding around the header container for better spacing */
+    background-color: var(--header-background); /* This sets the background color of the header container to the whatever is set in the themes*/
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+/* This changes the size of the logo */
+.logo{
+    width: 45px; /*This makes the logo smaller compared to the original size*/
+    height:auto; /*This resizes the height to match the width*/
+}
+
+/* This styles the main header of the page */
+.Main_header{
+    font-size: 30px; /* This increases the font size of the main header to make it more prominent */
+    color:var(--text-color); /* This sets the color of the main header to a dark gray for better readability */
+    font-family: Arial, sans-serif; /* This sets the font of the main header to Arial, which is a serif font */
+    border:none; /* This removes the default border around the header */
+    margin:0; /* This removes the default margin around the header */
+}
+
+/*This makes it so that the navigaton bar has no padding and margin*/
+.Navigation{
+    margin: 0;
+    padding: 0;
+    background-color: var(--nav-background);
+}
+
+/* This specifically targets the hyperlinks in the navigation, changing the colour and size of the font */
+.Navigation a{
+    text-decoration:none; /* This removes the default underline from the navigation links for a cleaner look */
+    color:var(--text-color); /* This sets the color of the navigation links to a dark gray for better readability */
+    font-family: Arial, sans-serif; /* This sets the font of the navigation links to Georgia, which is a serif font */
+    font-size: 85%; /* This reduces the font size of the navigation links to make them less prominent than the main header */
+}
+
+/* This styles the list items in the navigation and make it so the bullet points are removed */
+.Navigation li{
+    list-style: none; /* This removes the default bullet points from the navigation list items for a cleaner look */
+    margin:0; /* This removes the default margin from the navigation list items for better spacing */
+    border: none; /* This removes the default border from the navigation list items for a cleaner look */
+    padding: 0.20% 1%; /* This adds some padding around the navigation list items for better spacing */ 
+}
+
+/*This makes it so that the navigation list items are displayed horizontally */
+.Navigation ul {
+    display: flex; /* This makes the navigation list a flex container, allowing for flexible layout of its children */
+    justify-content: center; /* This centers the navigation list items horizontally within the navigation bar */
+    align-items: center;
+    gap: 30px;
+    padding:0; /*This adds some padding around the navigation list for better spacing */
+    background-color:var(--nav-background); /*This sets the background color of the navigation list to white */
+    margin-left: 250px; /*This makes it so that there is no margin around the navigation list */
+    cursor: pointer; /*This changes the cursor to a pointer when hovering over the navigation list for better user experience */
+}
+
+/*This targets the navigation links and makes them center*/
+.Navigation_links{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex:1;
+}
+
+/*This changes the font type and size*/
+.Navigation_links a{
+    font-family: Arial, sans-serif; /* This sets the font of the navigation list to Arial*/
+    font-size: 125%;
+}
+
+/* This styles the navigation toggle button, making it hidden by default and displayed as a flex container with centered content and a gap between the bars when the screen width */
+.Navigation_toggle{
+    display: none;/* This hides the navigation toggle button by default, as it is only needed on smaller screens */
+    flex-direction: column;/* This sets the direction of the flex items (the bars) to vertical for a typical hamburger menu appearance */
+    justify-content: center;/* This vertically centers the bars within the toggle button for better alignment */
+    gap:3px;/* This adds a gap between the bars for better visibility and separation */
+    background: var(--nav-background);/* This sets the background color of the toggle button to white for better contrast and visibility */
+    border: none;/* This removes the default border from the toggle button for a cleaner look */
+    padding: 10px;/* This adds some padding around the toggle button for better spacing and a larger clickable area */
+    cursor: pointer;/* This changes the cursor to a pointer when hovering over the toggle button for better user experience */
+    margin-left: auto;/* This adds margin to the left of the toggle button to position it towards the right side of the navigation bar */
+}
+
+
+.font-controls {
+    display: flex;
+    gap: 10px;
+    margin-left: 0; 
+    padding-right: 20px;
+    position: static;
+    align-items: center;
+    margin-left:auto;
+    right: 0;
+}
+
+
+.Navigation nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--nav-background);
+    padding: 10px 20px;
+    position: relative;
+}
+
+.Navigation a:hover {
+    color: #2c7baf;
+    background-color: rgba(35, 101, 145, 0.1);
+}
+
+/* This media query targets screens with a maximum width of 700px, making the navigation responsive for mobile devices. It displays the navigation toggle button and hides the navigation links by default, showing them in a vertical layout when the toggle button is activated. The navigation bar is also set to wrap its content and position itself relative to allow for the absolute positioning of the navigation links when they are displayed. */
+@media (max-width: 700px) {
+
+     .Navigation_toggle{
+        display: flex;/* This displays the navigation toggle button as a flex container when the screen width is 700px or less, making it visible and usable on smaller screens */
+        order: 2;
+        margin-left: 0;
+    }
+
+    .Navigation nav {
+        flex-wrap: wrap;
+        position: relative;
+        justify-content: space-between;
+    }
+
+  .Navigation_links {
+    display: none !important;/* This hides the navigation links by default when the screen width is 700px or less, as they will be shown in a vertical layout when the toggle button is activated */
+    flex-direction: column;/* This sets the direction of the navigation links to vertical when they are displayed, making them easier to read and navigate on smaller screens */
+    width: 100%;/* This sets the width of the navigation links to 100% of their parent container when they are displayed, making them take up the full width of the screen for better visibility and usability on smaller screens */
+    position: absolute;/* This positions the navigation links absolutely when they are displayed, allowing them to overlay other content and be positioned based on the top and left properties */
+    top: 100%; /* adjust based on navbar height */
+    background-color: var(--nav-background);
+    left: 0;/* This positions the navigation links at the top left of the screen when they are displayed, making them easily accessible and visible on smaller screens */
+    padding: 1rem;/* This adds some padding around the navigation links when they are displayed, improving the spacing and readability on smaller screens */
+    z-index: 100;
+  }
+
+  .Navigation_links.active {
+    display: flex !important;/* This displays the navigation links as a flex container when the .active class is added, making them visible and usable on smaller screens when the toggle button is activated */
+  }
+  .Navigation {
+    flex-wrap: wrap;/* This allows the navigation bar to wrap its content when the screen width is 700px or less, preventing overflow and ensuring that the navigation links can be displayed properly when the toggle button is activated */
+    position: relative;/* This sets the position of the navigation bar to relative, allowing for the absolute positioning of the navigation links when they are displayed on smaller screens */
+  }
+
+    .Navigation ul{
+        display: flex; /* This makes the navigation list a flex container, allowing for flexible layout of its children */
+        flex-direction: column; /* This changes the direction of the navigation list items to vertical for better readability on smaller screens */
+        align-items: center; /* This centers the navigation list items horizontally within the navigation bar */
+        margin-left:0;
+    }
+
+    .font-controls {
+        margin-left: 10px;
+        order: 1;
+    }
+}
+
+.bar{
+    display: block;/* This makes the bars in the navigation toggle button block-level elements, allowing them to stack vertically and take up the full width of the toggle button for a typical hamburger menu appearance */
+    width: 30px;/* This sets the width of the bars in the navigation toggle button to 30px, making them visible and proportionate to the size of the toggle button */
+    height: 4px;/* This sets the height of the bars in the navigation toggle button to 4px, making them visible and proportionate to the size of the toggle button */
+    background-color: var(--bar-colour);/* This sets the background color of the bars in the navigation toggle button to grey for better visibility and contrast */
+}
+
+
+@media(max-width: 700px) {
+    .Navigation nav{
+        flex-wrap: wrap;
+    }
+
+}
+
+/*This makes it so that the navigation list items are displayed vertically on smaller screens*/
+/*@media (max-width:700px) {
+    .Navigation ul{
+        display: flex; /* This makes the navigation list a flex container, allowing for flexible layout of its children */
+       /* flex-direction: column; /* This changes the direction of the navigation list items to vertical for better readability on smaller screens */
+        /*align-items: center; /* This centers the navigation list items horizontally within the navigation bar */
+ /*   }
+}*/
+
+/*This makes it so that the books are displayed in a grid layout */
+.books-container{
+    display: grid; /* This makes the books container a grid container, allowing for flexible layout of its children */
+    grid-template-columns: repeat(2,1fr); /* This creates two equal columns in the grid for the books */
+    gap:20px; /* This removes the default gap between the grid items for better spacing */
+    padding: 20px; /* This removes the default padding from the books container for better spacing */ 
+}
+
+/*This makes it so that the books are displayed in a grid layout on smaller screens */
+@media (max-width: 700px) {
+    .books-container {
+       grid-template-columns: 1fr; /* This changes the grid layout to a single column when the screen width is 700px or less, making it more mobile-friendly */
+    }
+}
+
+/*This makes it so that the book images sizes are changed and centered*/
+.books-container img{
+    width: 140px;/* This sets the width of the book cover images to 20% of their container */
+    height:auto; /* This resizes the height to match the width, maintaining the aspect ratio of the book cover images */
+    border-radius:8%;/* This rounds the corners of the book cover images */
+    flex-shrink: 0; /* This prevents the book cover images from shrinking when the container is resized, maintaining their original size */
+}
+
+/*This makes so that the descriptions are side by side with the book images*/
+.HOH, .TOOL, .AH, .GG {
+    display: flex;/*This makes the description container a flex container */
+    flex-direction: row;/*This sets the direction of the flex items to horizontal */
+    align-items: flex-start;/*This aligns the flex items to the start of the cross axis */
+    gap: 25px;/*This adds a gap between the flex items */
+    padding: 30px;/*This adds padding around the description container */
+    background-color: var(--container-background);/*This sets the background color of the description container to white for better contrast */
+    color: var(--text-color);
+    border-radius: 15px;/*This rounds the corners of the description container */
+    margin: 0;/*This adds margin around the description container for better spacing */
+    font-family: Arial,sans-serif;
+}
+
+.title{
+    font-size: 120%;
+}
+
+/*This makes it so that the button is centered and has some padding around it for better spacing and a more clickable area*/
+.button{
+    width:fit-content; /* This makes the width of the button fit its content, preventing it from being too wide or too narrow */
+    padding: 2.5% 2%; /* This adds some padding around the button for better spacing and a more clickable area */
+    cursor: pointer; /* This changes the cursor to a pointer when hovering over the button for better user experience */
+}
+
+/* This styles the payment form, making it a flex container with centered content, a white background for better contrast, and some padding and margin for better spacing */
+.Payment_form {
+    display: flex;/* This makes the payment form a flex container, allowing for flexible layout of its children */
+    justify-content: center;/* This horizontally centers the content in the payment form for better alignment */
+    background-color: var(--container-background);/* This sets the background color of the payment form to white for better contrast and readability */
+    width: 50%;/* This sets the width of the payment form to 50% of its parent container, making it smaller and more focused on the content */
+    flex-direction: column;/* This sets the direction of the flex items to vertical for better readability and alignment of the form fields */
+    align-items: center;
+    gap: 10px;/* This adds a gap between the form fields for better spacing and readability */
+    padding: 20px;/* This adds padding around the payment form for better spacing and separation from other elements */
+    margin: 15% auto;/* This adds margin around the payment form for better spacing, with auto on the sides to center it horizontally and more margin on the top for better separation from other elements */
+}
+
+/* This styles the payment options title, making it left-aligned with an underline and some spacing */
+#Payment_title {
+    align-self: flex-start; /* pushes it to the left inside flex container */
+    width: 100%;/* makes underline stretch nicely */
+    text-align: left;/* ensures text stays left */
+    font-size: 150%;/* increases font size for prominence */
+    color: var(--text-color);/* sets text color to dark gray for readability */
+    font-family: Arial, sans-serif;/* sets font to Georgia for a classic look */
+    border-bottom: 2px solid var(--text-color); /* underline */
+    padding-bottom: 5px;/* spacing from line */
+    margin-bottom: 0%;/* removes default margin below title for better spacing with options */
+    margin-top: 0;/* removes default margin above title for better spacing with options */
+}
+
+/* This styles the card image in the payment options, making it smaller and centered */
+#Card_image {
+    width: 30%;/* This sets the width of the card image to 30% of its container, making it smaller and more proportionate to the text */
+    height: auto;/* This resizes the height to match the width, maintaining the aspect ratio of the card image */
+    border-radius: 8%;/* This rounds the corners of the card image for a softer look */
+    flex-shrink: 0; /* Stops the image from squishing */
+    justify-self: center;/* This centers the image horizontally within its grid cell */
+}
+
+/* This styles the payment options section, making it a flex container with centered content and some spacing */
+.Payment_headings {
+    display: flex; /* This makes the options section a flex container, allowing for flexible layout of its children */
+    gap: 20px;/* This adds a gap between the elements in the options section for better spacing */
+    margin-top: 0%;/* This removes the default margin from the top of the options section for better spacing with the title */
+    display: flex;/* This makes the options section a flex container, allowing for flexible layout of its children */
+    align-items: center;/* This vertically centers the content in the options section for better alignment */
+    justify-content: center;/* This horizontally centers the content in the options section for better alignment */
+}
+
+.Payment_headings p, .Payment_headings h1 {
+    margin-top: 0; /* This removes the default margin from the paragraph and header in the options section to align them better with the image */
+    color: var(--text-color);
+}
+
+/* This styles the text in the payment options section, making it a dark gray color, using the Georgia font, and making it bold for better readability and emphasis */
+.Payment_headings p {
+    color: #434242; /* This sets the color of the text in the options section to a dark gray for better readability */
+    font-family: Arial, sans-serif;/* This sets the font of the text in the options section to Georgia, which is a serif font for a classic look */
+    font-weight: bold;/* This makes the text in the options section bold for better emphasis and readability */
+}
+
+/* This styles the form inputs and select elements, giving them a border for better visibility and separation from the background */
+form input, form select {
+    border: 1px solid #ccc; /* This adds a light gray border to the form inputs and select elements for better visibility and separation from the background */
+}
+
+/* This styles the card number input, adding some margin below it for better spacing between the form fields */
+#Card_number {
+    margin-bottom: 10px;/* This adds some margin below the card number input for better spacing between the form fields */
+}
+/* This styles the month and year select elements, giving them a specific width and some margin below them for better spacing between the form fields */
+#Month, #Year {
+    width: 15%;/* This sets the width of the month and year select elements to 15% of their container, making them smaller and more proportionate to the other form fields */
+    margin-bottom: 5px;/* This adds some margin below the month and year select elements for better spacing between the form fields */
+}
+
+#CVV {
+    width: 63%; /* This sets the width of the CVV input to 63% of its container, making it smaller and more proportionate to the other form fields */
+}
+
+form input, form select{
+    border: 1px solid black; /* This adds a black border to the form inputs and select elements for better visibility and separation from the background */
+}
+
+/* This styles the submit button, making it a flex container with centered content and some margin around it for better spacing */
+#submit_button {
+    display: flex;/* This makes the submit button a flex container, allowing for flexible layout of its children */
+    justify-content: center;/* This horizontally centers the content in the submit button for better alignment */
+    align-items: center;/* This vertically centers the content in the submit button for better alignment */
+    margin: 2.5% auto;/* This adds some margin around the submit button for better spacing, with auto on the sides to center it horizontally */
+}
+
+/* This styles the message container, making it a flex container with centered content, a white background for better contrast, and some padding and margin for better spacing */
+.message {
+    display: flex;/* This makes the message container a flex container, allowing for flexible layout of its children */
+    justify-content: center;/* This horizontally centers the content in the message container for better alignment */
+    align-items: center;/* This vertically centers the content in the message container for better alignment */
+    background-color: var(--container-background);/* This sets the background color of the message container to white for better contrast and readability */
+    padding: 10% 8%;/* This adds padding around the message container for better spacing, with more padding on the top and bottom for better separation from other elements */
+    width: 40%;/* This sets the width of the message container to 40% of its parent container, making it smaller and more focused on the content */
+    height: auto; /* This allows the height of the message container to adjust based on its content, preventing it from being too tall or too short */
+    margin: 10% auto; /* This adds margin around the message container for better spacing, with auto on the sides to center it horizontally and more margin on the top for better separation from other elements */
+    text-align: center; /* This centers the text within the message container for better readability and visual appeal */
+}
+
+/* This styles the success message text, making it a dark gray color for better readability, using the Georgia font for a classic look, and making it bold for emphasis */
+#success_message {
+    color: var(--text-color); /* This sets the color of the success message text to a dark gray for better readability */
+    font-family: Arial, sans-serif;/* This sets the font of the success message text to Georgia, which is a serif font for a classic look */
+    font-weight: bold;
+}
+
+.theme-controls {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-left: 20px;
+}
+.theme-controls label {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: var(--text-color);
+}
+.theme-controls select {
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.basket_icons{
+    height:50px;
+    width:auto;
+}
+

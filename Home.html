@@ -1,0 +1,132 @@
+<!DOCTYPE html> <!-- This declares that the documents is an HTML -->
+<html lang="en" dir="ltr"> <!-- This specifies that the page's language is English and you read from left to right-->
+ 
+<!--None of this will be shown on the actual web page-->
+
+<head> <!--This contains the meta data of the page-->
+ <meta charset="UTF-8"> <!-- This specifies the character encoding for the HTML document -->
+ <title>Paper Book Lovers Home</title> <!--This makes 'PaperBook Lovers' the title of the page-->
+ <link rel="stylesheet" href="CSS/Book_stylesheet.css"> <!-- This links the HTML document to the CSS document-->
+ <script src="JavaScript/Payment.js"></script> <!-- This links the HTML document to the JavaScript document-->
+ <script src="JavaScript/Navigation.js"></script> <!-- This links the JavaScript file to the page -->
+ <script src="JavaScript/Font_size.js"></script>
+ <script src="JavaScript/Theme.js"></script>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- This makes the page responsive to different screen sizes -->
+</head>
+
+<body><!-- Everything inside the tag '<body>' will be shown on the actual web page-->
+
+    <div class="Header_container"> <!-- This creates a container for the contact page -->
+        <img id="Home_logo" class="logo" src="Images/Book_Logo/Logo.jpg" > <!-- This adds the logo next to the home page header-->
+        <h1 id="Home_header" class="Main_header">Paper Book Lovers</h1> <!--This is the main header and title of the page of the page-->
+    </div>
+
+
+    <!--This is the navigation bar dedicated to the home page-->
+    <div id="Home_nav" class="Navigation"> <!--This creates an unique id for the navigation in the home and puts the navigaton bar into a class -->
+
+        <nav> <!--This creates navigation links-->
+
+        <button class="Navigation_toggle" id="Home_toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+
+        </button>
+
+            <ul class="Navigation_links"><!--This creates an unordered list for the navigation items -->
+                <!--Everything is linked to their pages-->
+                 <li id="H_nav1"><a href="Home.html">Home</a></li>
+                 <li id="H_nav2"><a href="About_Us.html">About Us</a></li>
+                 <li id="H_nav3"><a href="Contact_Us.html">Contact Us</a></li>
+            </ul>
+
+        <!--This creates a class for the font size buttons-->
+        <div class="font-controls">
+
+        <button id="Increase_button">A+</button>
+
+        <button id="Reset_button">A</button>
+
+        <button id="Decrease_button">A-</button>
+
+</div>
+
+<!--This created a theme selector-->
+<div class="colour_theme_container">
+    <label for="H_Colour_selector">Theme:</label>
+    <select id="H_Colour_selector" class="Colour_selector">
+        <option value="default">Default</option>
+        <option value="dark">Dark</option>
+        <option value="light">Light</option>
+    </select>
+    </div>
+
+    <!--This created an icon for the basket-->
+    <div class="basket_container">
+
+        <button class="baskets" id="Home_basket">
+        <span class="basket_icon" >
+        <img class="basket_icons" id="Home_basket_icon" src="Images/Icon/Basket.jpg">
+        </span>
+        <span class="basket_number" id="Home_basket_number">0</span>
+        </button>
+    </div>
+        </nav>
+    </div>
+
+   
+        <div class="books-container"><!-- This is the container for the books -->
+
+            <!--This is the section for the House of Hollow book-->
+            <div class="HOH">
+            <img src="Images/Book_images/house_of_hollow.jpg" id="HOH_image"> <!-- This is the image of the book cover -->
+            <div class="section"> <!-- This is the section that contains the books -->
+            <p id="HOH_title" class="title"><strong>House of Hollow</strong></p>
+            <p id="HOH_description" class="description">House of Hollow is a gothic horror novel by Krystal Sutherland. It follows the story of three sisters who were born with hollow eyes and the mystery surrounding their past and their family.</p>
+           <!-- This is the link that takes the user to the payment page when they click the button -->
+            <button id="HOH_button" class="button" onclick="location.href='Payment.html'" >Pay</button> <!-- This is take the user to the payment page -->
+            </div>
+            </div>
+
+            <!--This is the section for the House of Hollow book-->
+            <div class="TOOL">
+            <img src="Images/Book_images/the_only_one_left.jpg" id="the_only_one_left"> <!-- This is the image of the bok cover -->
+              <!-- This is the name of the book and the author -->
+               <div class="section"> <!-- This is the section that contains the books -->
+             <p id="TOOL_title" class="title"><strong>The Only One Left </strong></p>
+             <p id="TOOL_description" class="description">The Only One Left by Riley Sager is a gothic suspense novel set between a decaying cliffside mansion in 1983 Maine and a buried family tragedy from 1929. Sager builds the story around rumor, class tension, old money, and the fear of living beside someone the world has already judged a killer.</p>
+             <!-- This is the link that takes the user to the payment page when they click the button -->
+              <button id="TOOL_button" class="button" onclick="location.href='Payment.html'">Pay</button> <!-- This is take the user to the payment page -->
+              
+            </div>
+            </div>
+        
+
+            <div class="AH">
+            <img src="Images/Book_images/atomic_habits.jpg" id="atomic_habits"> <!-- This is the image of the book cover -->
+            <div class="section"> <!-- This is the section that contains the books -->
+            <p id="AH_title" class="title"><strong>Atomic Habits </strong></p>
+            <p id="AH_description" class="description">Atomic Habits is a nonfiction book written by James Clear. Released in 2018, it tells the reader how to improve their life by breaking bad habits</p>
+           <!-- This is the link that takes the user to the payment page when they click the button -->
+            <button id="AH_button" class="button" onclick="location.href='Payment.html'" >Pay</button> <!-- This is take the user to the payment page -->
+            
+            </div>
+            </div>
+        
+
+            <div class="GG">
+            <img src="Images/Book_images/gangester_granny.jpg" id="gangester_granny"> <!-- This is the image of the book cover -->
+            <div class="section1"> <!-- This is the section that contains the books -->
+                <p id="GG_title" class="title"><strong>Gangsta Granny </strong></p>
+                <p id="GG_description" class="description">Gangsta Granny is a children’s book written by David Walliams, first published by Harper Collins in 2011. It is illustrated by Tony Ross and tells the story of a boy and his granny on a daring and hilarious mission to steal the Crown Jewels</p>
+            <!-- This is the link that takes the user to the payment page when they click the button -->
+            <button id="GG_button" class="button" onclick="location.href='Payment.html'">Pay</button> <!-- This is take the user to the payment page -->
+         
+            </div>
+            </div>
+        </div>
+
+
+</body>
+</html>
